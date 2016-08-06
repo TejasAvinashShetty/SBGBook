@@ -1,3 +1,13 @@
+#db data dir, js 3rd party dirs (node_modules and vendor)
+scratch
+vendor
+node_modules
+bower_components
+*~
+
+#Mac .DS_Store metadata file
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,0 +1,3 @@
+[run]
+source = sbg_book
+omit = sbg_book/test*
