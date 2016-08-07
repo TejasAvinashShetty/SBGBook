@@ -47,13 +47,12 @@ class TestMyViewSuccessCondition(BaseTest):
 
         from .models import Person
 
-        model = Person(name='one')
+        model = Person(lastName='Smith', firstName='Joe')
         self.session.add(model)
 
     def test_passing_view(self):
         from .views.default import my_view
         info = my_view(dummy_request(self.session))
-        self.assertEqual(info['one'].name, 'one')
         self.assertEqual(info['project'], 'sbg_book')
 
 

@@ -52,5 +52,6 @@ setup(name='sbg_book',
       main = sbg_book:main
       [console_scripts]
       initialize_sbg_book_db = sbg_book.scripts.initializedb:main
+      import_csv_people = sbg_book.scripts.import_csv_people:main
       """,
       )

@@ -62,37 +62,4 @@ class PersonSection(Base):
     timestamp = Column(DateTime, default=datetime.now)
     state = Column(Text, default='')                        
 
-if 0:
-    class Region(Base):
-        __tablename__ = 'regions'
-        __table_args__ = (  Index('region_ix_path','regionPath'),
-                            Index('region_ix_parent', 'parentRegionID'),
-                            Index('region_ix_context', 'contextID'),
-                            Index('region_ix_rtype','regionTypeID'),
-                            Index('region_ix_exppath','regionPathExpanded'),
-                            Index('region_ix_expcid','contextIDExpanded'),
-                         )
-        id = Column(Integer, Sequence('region_seq_id'), primary_key=True)
-        contextID = Column(Text)
-        regionTypeID = Column(Integer, ForeignKey('regiontypes.id'))
-        regionType = relationship("RegionType", foreign_keys=[regionTypeID])
-
-        parentRegionID = Column(Integer, ForeignKey(id), default=None)
-
-        children = relationship("Region", 
-                                backref=backref('parent', remote_side=id),
-                                collection_class = attribute_mapped_collection('contextID'),
-                                cascade="all, delete-orphan",
-                                foreign_keys=[parentRegionID])
-
-        intermentSpace = relationship("IntermentSpace", uselist=False, backref="region")
-
-        regionPath = Column(Text)
-        regionPathExpanded = Column(Text)   # expanded path for sorting/indexing
-        contextIDExpanded = Column(Text)    # expanded contextID for sorting/indexing
-        intermentSpaceStatusLine = Column(Text)
-        name = Column(Text)
-
-        def __repr__(self):
-            return '<Region Object: regionPath=%s, name=%s>' % (self.regionPath, self.name)
 

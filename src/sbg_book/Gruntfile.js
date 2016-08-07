@@ -48,6 +48,16 @@ module.exports = function(grunt) {
             options : compileOptions
         }
     },
+    jst: {
+      options: {
+        amd: true
+      },
+      compile: {
+        files: {
+          './app/scripts/templates.js': ['app/scripts/templates/*.ejs']
+        }
+      }
+    },
     watch: {
         less: {
             // Watch all .less files from the styles directory)
@@ -71,11 +81,12 @@ module.exports = function(grunt) {
   });
 
   // Plugin loading
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-contrib-requirejs');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jst');
+    
   // Task definition
-  grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['watch']);
 
 };

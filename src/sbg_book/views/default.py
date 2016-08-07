@@ -10,10 +10,10 @@ from ..models import Person
 def my_view(request):
     try:
         query = request.dbsession.query(Person)
-        one = query.filter(Person.lastName == 'Smith').first()
+        tryQuery = query.first()
     except DBAPIError:
         return Response(db_err_msg, content_type='text/plain', status=500)
-    return {'one': one, 'project': 'sbg_book'}
+    return {'project': 'sbg_book'}
 
 
 db_err_msg = """\
