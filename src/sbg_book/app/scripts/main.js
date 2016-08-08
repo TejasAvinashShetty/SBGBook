@@ -23,6 +23,6 @@ require.config({
   deps: ['jquery', 'underscore']
 });
  
-require(['jquery','underscore','backbone','backbone.babysitter','backbone.wreqr','backbone.marionette','views/app'], function($,_,Bb,Bbb,Bbw,Mnt,AppView) {
+require(['views/app'], function(AppView) {
   new AppView; 
 });
