@@ -4,11 +4,11 @@ Playground for Standards Based Grading app, just toying with ideas.
 
 Server Side: Pyramid product sbg_book 
 
-    src/            primary source directory
-    src/sbg_book/   python product directory
-    src/scratch     temporary/cache/production data (not held in repository)
+    pyramid/            primary source directory
+    pyramid/sbg_book/   python product directory
+    pyramid/scratch     temporary/cache/production data (not held in repository)
 
-Getting Started
+Getting Started with Pyramid
 
     #
     # get into virtual environment
@@ -22,7 +22,7 @@ Getting Started
     
     git clone git@github.com:sspickle/SBGBook.git
     cd SBGBook/
-    cd src/
+    cd pyramid/
     pip install -U pip
     pip install -e .
     cd sbg_book
