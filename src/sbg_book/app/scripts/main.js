@@ -3,9 +3,9 @@ require.config({
     'jquery': 'vendor/jquery/dist/jquery',
     'underscore': 'vendor/underscore/underscore',
     'backbone': 'vendor/backbone/backbone',
-    'backbone.babysitter': 'vendor/backbone.babysitter/lib/backbone.babysitter.js',
-    'backbone.wreqr': 'vendor/backbone.wreqr/lib/backbone.wreqr.js',
-    'backbone.marionette': 'vendor/backbone.marionette/lib/core/backbone.marionette.js',
+    'backbone.babysitter': 'vendor/backbone.babysitter/lib/backbone.babysitter',
+    'backbone.wreqr': 'vendor/backbone.wreqr/lib/backbone.wreqr',
+    'backbone.marionette': 'vendor/marionette/lib/backbone.marionette',
   },
   shim: {
     underscore: {
@@ -23,6 +23,6 @@ require.config({
   deps: ['jquery', 'underscore']
 });
  
-require(['views/app'], function(AppView) {
+require(['jquery','underscore','backbone','backbone.babysitter','backbone.wreqr','backbone.marionette','views/app'], function($,_,Bb,Bbb,Bbw,Mnt,AppView) {
   new AppView; 
 });

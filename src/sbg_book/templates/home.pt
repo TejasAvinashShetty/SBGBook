@@ -16,10 +16,14 @@
 
   <body>
     <div id="content">
-      The primary content of the page
     </div>
       
     <script data-main="app/scripts/main" src="app/scripts/vendor/requirejs/require.js"></script>
+    
+    <script id="personTemplate" type="text/template">
+            <span>Name <%= firstName %>, <%= lastName %> </span>
+    </script>
+
   </body>
 </html>
 
